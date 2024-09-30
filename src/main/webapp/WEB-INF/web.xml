@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
   <display-name>serie1</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
+	    <welcome-file-list>
+	  	<welcome-file>QueryStringSender.html</welcome-file>
+  	</welcome-file-list>
+<servlet>
+    <servlet-name>QueryStringReceiver</servlet-name>
+    <servlet-class>be.condorcet.QueryStringReceiver</servlet-class>
+    <init-param>
+        <description>Connection à l'API</description>
+        <param-name>api-key</param-name>
+        <param-value>ABC123</param-value>
+    </init-param>
+</servlet>
+
+<servlet-mapping>
+		<servlet-name>QueryStringReceiver</servlet-name>
+		<url-pattern>/Servlet</url-pattern>
+		<url-pattern>/PremiereServlet</url-pattern>
+</servlet-mapping>
+
+<context-param>
+	<param-name>connection-string</param-name>
+	<param-value>dbOracle</param-value>
+</context-param>
 </web-app>
+
