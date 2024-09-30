@@ -13,16 +13,16 @@ import java.io.PrintWriter;
 public class QueryStringReceiver extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Récupération des paramètres
+       
         String nom = request.getParameter("name");
         String prenom = request.getParameter("firstname");
         String age = request.getParameter("age");
 
-        // Préparation de la réponse
+     
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // Affichage du message
+       
         out.println("<html><body>");
         out.println("<h1>Bonjour " + prenom + " " + nom + ", vous avez " + age + " ans.</h1>");
         out.println("</body></html>");

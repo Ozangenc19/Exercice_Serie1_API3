@@ -7,19 +7,36 @@
 <servlet>
     <servlet-name>QueryStringReceiver</servlet-name>
     <servlet-class>be.condorcet.QueryStringReceiver</servlet-class>
-    <init-param>
-        <description>Connection à l'API</description>
-        <param-name>api-key</param-name>
-        <param-value>ABC123</param-value>
-    </init-param>
+  
 </servlet>
 
+<servlet>
+    <servlet-name>DataReceiver</servlet-name>
+    <servlet-class>be.condorcet.DataReceiver</servlet-class>
+  
+</servlet>
+<servlet>
+    <servlet-name>PokemonReceiver</servlet-name>
+    <servlet-class>be.condorcet.PokemonReceiver</servlet-class>
+  
+</servlet>
 <servlet-mapping>
 		<servlet-name>QueryStringReceiver</servlet-name>
 		<url-pattern>/Servlet</url-pattern>
 		<url-pattern>/PremiereServlet</url-pattern>
 </servlet-mapping>
 
+<servlet-mapping>
+		<servlet-name>DataReceiver</servlet-name>
+		<url-pattern>/FirstServlet</url-pattern>
+		<url-pattern>/DeuxiemeServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+		<servlet-name>PokemonReceiver</servlet-name>
+		<url-pattern>/MonServlet</url-pattern>
+		<url-pattern>/LeServlet</url-pattern>
+</servlet-mapping>
 <context-param>
 	<param-name>connection-string</param-name>
 	<param-value>dbOracle</param-value>
