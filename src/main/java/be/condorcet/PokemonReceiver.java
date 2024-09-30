@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 @WebServlet("/PokemonReceiver")
@@ -27,7 +28,33 @@ public class PokemonReceiver extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
-	}
+		// Récupérer les Pokémon sélectionnés depuis le formulaire
+        String[] selectedPokemons = request.getParameterValues("pokemon");
+
+        // Configurer le type de contenu de la réponse
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        // Générer la réponse HTML
+        out.println("<html><body>");
+        out.println("<h2>Vous avez choisi :</h2>");
+
+        if (selectedPokemons != null && selectedPokemons.length > 0) {
+            out.println("<ul>");
+            for (String pokemon : selectedPokemons) {
+                out.println("<li>" + pokemon + "</li>");
+            }
+            out.println("</ul>");
+        } else {
+            out.println("<p>Aucun Pokémon sélectionné.</p>");
+        }
+
+        out.println("<p>Merci pour votre choix !</p>");
+        out.println("<p>Amusez-vous bien avec vos Pokémon !</p>");
+        out.println("</body></html>");
+
+        // Fermer le flux de sortie
+        out.close();
+    }
 
 }
