@@ -28,14 +28,14 @@ public class PokemonReceiver extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Récupérer les Pokémon sélectionnés depuis le formulaire
+		
         String[] selectedPokemons = request.getParameterValues("pokemon");
 
-        // Configurer le type de contenu de la réponse
+        
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // Générer la réponse HTML
+       
         out.println("<html><body>");
         out.println("<h2>Vous avez choisi :</h2>");
 
@@ -53,7 +53,7 @@ public class PokemonReceiver extends HttpServlet {
         out.println("<p>Amusez-vous bien avec vos Pokémon !</p>");
         out.println("</body></html>");
 
-        // Fermer le flux de sortie
+       
         out.close();
     }
 
