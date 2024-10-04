@@ -26,6 +26,12 @@
     <servlet-class>be.condorcet.ResponseHandler</servlet-class>
   
 </servlet>
+
+<servlet>
+    <servlet-name>StatusResponseHandler</servlet-name>
+    <servlet-class>be.condorcet.StatusResponseHandler</servlet-class>
+  
+</servlet>
 <servlet-mapping>
 		<servlet-name>QueryStringReceiver</servlet-name>
 		<url-pattern>/Servlet</url-pattern>
@@ -49,6 +55,12 @@
 		<servlet-name>ResponseHandler</servlet-name>
 		<url-pattern>/MaServlet</url-pattern>
 		<url-pattern>/CetteServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+		<servlet-name>StatusResponseHandler</servlet-name>
+		<url-pattern>/LuiServlet</url-pattern>
+		<url-pattern>/CeServlet</url-pattern>
 </servlet-mapping>
 <context-param>
 	<param-name>connection-string</param-name>
